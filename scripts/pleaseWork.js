@@ -149,15 +149,12 @@ function giveMeABreak(targetID) {
  * Show the names of the restaurants as buttons with dynamic id
  */
 function makeButtonsForEachRestaurant(restaurantInfo){
-    for (var i = 0; i < restaurantInfo.length; i++) {
+    for (let i = 0; i < restaurantInfo.length; i++) {
         var newTag = document.createElement("button");
         var textnode = document.createTextNode(restaurantInfo[i].name);
         newTag.appendChild(textnode);
         newTag.setAttribute("id", "restaurantButton" + i);
         newTag.classList.add("restaurant-button");
-        if (i == restaurantInfo.length -1) {
-            newTag.classList.add("restaurant-button-active");
-        } 
         var list = document.getElementById("restaurant-list");
         list.insertBefore(newTag, list.childNodes[0]);
     }
@@ -190,6 +187,17 @@ async function calculateAverageScore(restaurantID) {
 
 
 /**
+ * Clean up the content of 3 reviews of the restaurant
+ */
+function cleanUpReviews() {
+    document.getElementById('review1').innerHTML='';
+    document.getElementById('review2').innerHTML='';
+    document.getElementById('review3').innerHTML='';
+}
+//  End
+
+
+/**
  * When a restaurant name is clicked:
  *     1. the restaurant info should show up in the restaurant detail section;
  *     2. the lastest 3 reviews should show up in the restaurant review section;
@@ -215,9 +223,9 @@ function showRestaurantInfoAnd3Reviews (restaurantInfo){
                 writeOnWebPage("p", description, "restaurant-details");
             })
         });
-        // show lastest 3 reviews in the restaurant review section
-        const reviewsOfThisRestaurant = [];
+        // show 3 reviews of THIS restaurant in review section
         restaurantReviews.then(reviews =>{
+            const reviewsOfThisRestaurant = [];
             for (let i = 0; i < reviews.length; i++){
                 if (reviews[i].idrestaurant === restaurantID){
                     reviewsOfThisRestaurant.push(
@@ -228,16 +236,26 @@ function showRestaurantInfoAnd3Reviews (restaurantInfo){
                 }
             }
             targetButton.addEventListener("click", () => {
-                document.getElementById('review1').innerHTML='';
-                writeOnWebPage("article", reviewsOfThisRestaurant[0].nameOfWritter + ": " + reviewsOfThisRestaurant[0].review, "review1");
-                document.getElementById('review2').innerHTML='';
-                writeOnWebPage("article", reviewsOfThisRestaurant[1].nameOfWritter + ": " + reviewsOfThisRestaurant[1].review, "review2");
-                document.getElementById('review3').innerHTML='';
-                writeOnWebPage("article", reviewsOfThisRestaurant[2].nameOfWritter + ": " + reviewsOfThisRestaurant[2].review, "review3");
+                cleanUpReviews();
+                writeOnWebPage("span", reviewsOfThisRestaurant[0].nameOfWritter + ": ", "review1");
+                writeOnWebPage("article", reviewsOfThisRestaurant[0].review, "review1");
+                writeOnWebPage("span", reviewsOfThisRestaurant[1].nameOfWritter + ": ", "review2");
+                writeOnWebPage("article", reviewsOfThisRestaurant[1].review, "review2");
+                writeOnWebPage("span", reviewsOfThisRestaurant[2].nameOfWritter + ": ", "review3");
+                writeOnWebPage("article", reviewsOfThisRestaurant[2].review, "review3");
             })
         })
     }
 };
+// End
+
+
+/**
+ * Set initial state:
+ *      1. make one button to be active when page load;
+ *      2. display info and reviews of that restaurant.
+ */     
+document.getElementsByClassName()
 // End
 
 
@@ -276,11 +294,14 @@ function show3RestaurantsWithHighestScore(restaurantInfo) {
             // 2. avoid having letters flashing while the FOR loop runs.
             if (i == restaurantInfo.length - 1) {
                 document.getElementById("top-restaurants").innerHTML='';
-                writeOnWebPage("span", 'No.1 ' + newArraySortedByScore[0].name + ': ' + newArraySortedByScore[0].score + '/5.0', "top-restaurants");
+                writeOnWebPage("span", 'No.1 ' + newArraySortedByScore[0].name + ': ', "top-restaurants");
+                writeOnWebPage("span", newArraySortedByScore[0].score + '/5.0', "top-restaurants");
                 giveMeABreak("top-restaurants");
-                writeOnWebPage("span", 'No.2 ' + newArraySortedByScore[1].name + ': ' + newArraySortedByScore[1].score + '/5.0', "top-restaurants");
+                writeOnWebPage("span", 'No.2 ' + newArraySortedByScore[1].name + ': ', "top-restaurants");
+                writeOnWebPage("span", newArraySortedByScore[1].score + '/5.0', "top-restaurants");
                 giveMeABreak("top-restaurants");
-                writeOnWebPage("span", 'No.3 ' + newArraySortedByScore[2].name + ': ' + newArraySortedByScore[2].score + '/5.0', "top-restaurants");
+                writeOnWebPage("span", 'No.3 ' + newArraySortedByScore[2].name + ': ', "top-restaurants");
+                writeOnWebPage("span", newArraySortedByScore[2].score + '/5.0', "top-restaurants");
             }
         })
     }
@@ -322,11 +343,17 @@ function showLatest3Reviews(reviews) {
                     }
                 })
                 document.getElementById("latest-reviews-content").innerHTML='';
-                writeOnWebPage("article", reviewer1 + " wrote a review for " + restaurant1.name + ": " + reviewsSortedByDate[0].review, "latest-reviews-content");
+                writeOnWebPage("span", reviewer1 + " wrote a review for ", "latest-reviews-content");
+                writeOnWebPage("span", restaurant1.name, "latest-reviews-content");
+                writeOnWebPage("article", reviewsSortedByDate[0].review, "latest-reviews-content");
                 giveMeABreak("latest-reviews-content");
-                writeOnWebPage("article", reviewer2 + " wrote a review for " + restaurant2.name + ": " + reviewsSortedByDate[1].review, "latest-reviews-content");
+                writeOnWebPage("span", reviewer2 + " wrote a review for ", "latest-reviews-content");
+                writeOnWebPage("span", restaurant2.name, "latest-reviews-content");
+                writeOnWebPage("article", reviewsSortedByDate[1].review, "latest-reviews-content");
                 giveMeABreak("latest-reviews-content");
-                writeOnWebPage("article", reviewer3 + " wrote a review for " + restaurant3.name + ": " + reviewsSortedByDate[2].review, "latest-reviews-content");
+                writeOnWebPage("span", reviewer3 + " wrote a review for ", "latest-reviews-content");
+                writeOnWebPage("span", restaurant3.name, "latest-reviews-content");
+                writeOnWebPage("article", reviewsSortedByDate[2].review, "latest-reviews-content");
             })
         }
     }
