@@ -10,13 +10,13 @@ async function getRestaurantsInfo() {
 }
 const restaurantInfo = getRestaurantsInfo();
 getRestaurantsInfo().then(info => {
-    show3RestaurantsWithHighestScore(info);
-    makeButtonsForEachRestaurant(info);
-    showRestaurantInfoAnd3Reviews(info);
-    changeStyleForActiveButton();
-    showTotalRestaurants(info);
-})
-// End
+        show3RestaurantsWithHighestScore(info);
+        makeButtonsForEachRestaurant(info);
+        showRestaurantInfoAnd3Reviews(info);
+        changeStyleForActiveButton();
+        showTotalRestaurants(info);
+    })
+    // End
 
 
 /**
@@ -31,10 +31,10 @@ async function getRestaurantsReviews() {
 }
 const restaurantReviews = getRestaurantsReviews();
 getRestaurantsReviews().then(reviews => {
-    showLatest3Reviews(reviews);
-    showTotalReviews(reviews);
-})
-//End
+        showLatest3Reviews(reviews);
+        showTotalReviews(reviews);
+    })
+    //End
 
 
 /**
@@ -79,15 +79,15 @@ function showTotalReviews(reviews) {
 //         (response) => response.json())  
 // }
 //End
-    // fetch("http://red-strapi-postgres-heroku.herokuapp.com/Reviews", {
-    //     method: "POST",
-    //     body: JSON.stringify({
-    //         name: 'Mr. Wang',
-    //         review: 'Hello! I am Ivan.',
-    //         rating: 5,
-    //         idrestaurant: 'G0D0WN'
-    //     })
-    // })  
+fetch("http://red-strapi-postgres-heroku.herokuapp.com/Reviews", {
+    method: "POST",
+    body: JSON.stringify({
+        name: 'Mr. Wang',
+        review: 'Hello! I am Ivan.',
+        rating: 5,
+        idrestaurant: 'G0D0WN'
+    })
+})
 
 
 /**
@@ -117,23 +117,23 @@ function giveMeABreak(targetID) {
     var target = document.getElementById(targetID);
     var aBreak = document.createElement('br');
     target.appendChild(aBreak);
- }
- // End
+}
+// End
 
 
 /*
  * Show the names of the restaurants as buttons with dynamic id
  */
-function makeButtonsForEachRestaurant(restaurantInfo){
+function makeButtonsForEachRestaurant(restaurantInfo) {
     for (var i = 0; i < restaurantInfo.length; i++) {
         var newTag = document.createElement("button");
         var textnode = document.createTextNode(restaurantInfo[i].name);
         newTag.appendChild(textnode);
         newTag.setAttribute("id", "restaurantButton" + i);
         newTag.classList.add("restaurant-button");
-        if (i == restaurantInfo.length -1) {
+        if (i == restaurantInfo.length - 1) {
             newTag.classList.add("restaurant-button-active");
-        } 
+        }
         var list = document.getElementById("restaurant-list");
         list.insertBefore(newTag, list.childNodes[0]);
     }
@@ -148,14 +148,14 @@ function makeButtonsForEachRestaurant(restaurantInfo){
 async function calculateAverageScore(restaurantID) {
     var restaurantReview = await getRestaurantsReviews();
     var arrayOfScores = new Array;
-    for (var i = 0; i < restaurantReview.length; i++){
-        if (restaurantReview[i].idrestaurant == restaurantID){
+    for (var i = 0; i < restaurantReview.length; i++) {
+        if (restaurantReview[i].idrestaurant == restaurantID) {
             arrayOfScores.push(restaurantReview[i].rating);
         }
     }
     // after all scores are collected, calculate the average score
     var sum = new Number;
-    for (var i = 0; i < arrayOfScores.length; i++){
+    for (var i = 0; i < arrayOfScores.length; i++) {
         sum = sum + arrayOfScores[i];
     }
     var averageScore = sum / arrayOfScores.length;
@@ -170,7 +170,7 @@ async function calculateAverageScore(restaurantID) {
  *     1. the restaurant info should show up in the restaurant detail section;
  *     2. the lastest 3 reviews should show up in the restaurant review section;
  */
-function showRestaurantInfoAnd3Reviews (restaurantInfo){
+function showRestaurantInfoAnd3Reviews(restaurantInfo) {
     for (let i = 0; i < restaurantInfo.length; i++) {
         const targetButton = document.getElementById("restaurantButton" + i);
         const name = restaurantInfo[i].name;
@@ -182,7 +182,7 @@ function showRestaurantInfoAnd3Reviews (restaurantInfo){
         // show restaurant info in the restaurant detail section
         calculateAverageScore(restaurantID).then(score => {
             targetButton.addEventListener("click", () => {
-                document.getElementById('restaurant-details').innerHTML='';
+                document.getElementById('restaurant-details').innerHTML = '';
                 writeOnWebPage("h1", name, "restaurant-details");
                 writeOnWebPage("span", "Cuisine: " + type, "restaurant-details");
                 writeOnWebPage("span", "Dining: " + dining, "restaurant-details");
@@ -193,22 +193,21 @@ function showRestaurantInfoAnd3Reviews (restaurantInfo){
         });
         // show lastest 3 reviews in the restaurant review section
         const reviewsOfThisRestaurant = [];
-        restaurantReviews.then(reviews =>{
-            for (let i = 0; i < reviews.length; i++){
-                if (reviews[i].idrestaurant === restaurantID){
-                    reviewsOfThisRestaurant.push(
-                        {
-                            "nameOfWritter": reviews[i].name,
-                            "review": reviews[i].review
-                        });
+        restaurantReviews.then(reviews => {
+            for (let i = 0; i < reviews.length; i++) {
+                if (reviews[i].idrestaurant === restaurantID) {
+                    reviewsOfThisRestaurant.push({
+                        "nameOfWritter": reviews[i].name,
+                        "review": reviews[i].review
+                    });
                 }
             }
             targetButton.addEventListener("click", () => {
-                document.getElementById('review1').innerHTML='';
+                document.getElementById('review1').innerHTML = '';
                 writeOnWebPage("article", reviewsOfThisRestaurant[0].nameOfWritter + ": " + reviewsOfThisRestaurant[0].review, "review1");
-                document.getElementById('review2').innerHTML='';
+                document.getElementById('review2').innerHTML = '';
                 writeOnWebPage("article", reviewsOfThisRestaurant[1].nameOfWritter + ": " + reviewsOfThisRestaurant[1].review, "review2");
-                document.getElementById('review3').innerHTML='';
+                document.getElementById('review3').innerHTML = '';
                 writeOnWebPage("article", reviewsOfThisRestaurant[2].nameOfWritter + ": " + reviewsOfThisRestaurant[2].review, "review3");
             })
         })
@@ -246,14 +245,14 @@ function show3RestaurantsWithHighestScore(restaurantInfo) {
         const restaurantName = restaurantInfo[i].name;
         const restaurantID = restaurantInfo[i].idnumber;
         calculateAverageScore(restaurantID).then(score => {
-            const restaurantObject = {'name':restaurantName, 'score': score}
+            const restaurantObject = { 'name': restaurantName, 'score': score }
             allAverageScores.push(restaurantObject);
-            var newArraySortedByScore = allAverageScores.sort((a,b) => {return b.score - a.score});
+            var newArraySortedByScore = allAverageScores.sort((a, b) => { return b.score - a.score });
             // Reason for this IF statement:
             // 1. get rid of console error; 
             // 2. avoid having letters flashing while the FOR loop runs.
             if (i == restaurantInfo.length - 1) {
-                document.getElementById("top-restaurants").innerHTML='';
+                document.getElementById("top-restaurants").innerHTML = '';
                 writeOnWebPage("span", 'No.1 ' + newArraySortedByScore[0].name + ': ' + newArraySortedByScore[0].score + '/5.0', "top-restaurants");
                 giveMeABreak("top-restaurants");
                 writeOnWebPage("span", 'No.2 ' + newArraySortedByScore[1].name + ': ' + newArraySortedByScore[1].score + '/5.0', "top-restaurants");
@@ -271,7 +270,7 @@ function show3RestaurantsWithHighestScore(restaurantInfo) {
  */
 function showLatest3Reviews(reviews) {
     for (let i = 0; i < reviews.length; i++) {
-        var reviewsSortedByDate = reviews.sort((a,b) => {
+        var reviewsSortedByDate = reviews.sort((a, b) => {
             var a = new Date(a.created_at);
             var b = new Date(b.created_at);
             return b - a;
@@ -299,7 +298,7 @@ function showLatest3Reviews(reviews) {
                         return restaurantObject;
                     }
                 })
-                document.getElementById("latest-reviews-content").innerHTML='';
+                document.getElementById("latest-reviews-content").innerHTML = '';
                 writeOnWebPage("article", reviewer1 + " wrote a review for " + restaurant1.name + ": " + reviewsSortedByDate[0].review, "latest-reviews-content");
                 giveMeABreak("latest-reviews-content");
                 writeOnWebPage("article", reviewer2 + " wrote a review for " + restaurant2.name + ": " + reviewsSortedByDate[1].review, "latest-reviews-content");
@@ -315,12 +314,14 @@ function showLatest3Reviews(reviews) {
  * Put the clicked img on top
  */
 function changeImage1() {
-    document.getElementById("id1").src ="/images/joseph-gonzalez-egg-unsplash-resized.jpg";
+    document.getElementById("id1").src = "/images/joseph-gonzalez-egg-unsplash-resized.jpg";
 }
+
 function changeImage2() {
-    document.getElementById("id1").src ="/images/jay-wennington-N_Y88TWmGwA-unsplash-resized.jpg";
+    document.getElementById("id1").src = "/images/jay-wennington-N_Y88TWmGwA-unsplash-resized.jpg";
 }
+
 function changeImage3() {
-    document.getElementById("id1").src ="/images/brooke-lark-oaz0raysASk-unsplash-resized.jpg";
+    document.getElementById("id1").src = "/images/brooke-lark-oaz0raysASk-unsplash-resized.jpg";
 }
 //End

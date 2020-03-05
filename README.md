@@ -138,6 +138,14 @@ Project wrap-up
      1. Fine tuned layout
      2. Added tablet media query
 
+### 2020-03-04
+     1. Footer was broken, so fixed it
+     2. Finished tablet query
+     3. Attempted to problem-solve issues with posting form to api
+
+### 2020-03-05
+    1. Fixing errors
+    2. Still trying to fix form errors
 
 ### Most Proudest
      Getting Picture replace working with JavaScript
