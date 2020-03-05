@@ -91,10 +91,13 @@ Project wrap-up
       2. researched how to post user comments with javascript fetch-post.
 ### 2020-03-04
       1. continued researching and testing, can make new entry in server, but the entry is empty.
+### 2020-03-05
+      1. set an "initial state" to show one restaurant info & reviews without clicking any buttons;
+      2. gave the generated contents different tags for better CSS styling.
 ### To-do List
-      1. post user comment
-      2. weather api
-      3. show restaurant with patio
+      1. post user comment.
+      2. weather api, show restaurants with patios according to weather.
+      3. change restaurant names in the reviews into links. When a link is clicked, page should jump to the restaurant info section and display related info.
 ### Most/Least Proud Moments
       Most: Putting pieces of code together can make some of the functions work!
       Least: Having errors in my console and could not figure out why...
@@ -181,6 +184,18 @@ Project wrap-up
       3. Re-structured elements for increased usability
       4. Re-styled search input
       5. Made iframes responsive to media breaks
+### 2020-03-04
+      1. De-bugged HTML
+      2. De-bugged CSS
+      3. Researched POST to API
+      4. Replaced all placeholder text
+### 2020-03-05
+      1. De-bugged HTML
+      2. De-bugged CSS
+      3. Added MQ for responsiveness
+      4. Formatted review areas
+      5. Adjusted form input sizes
+      6. Re-formatted page layouts
 ## Highs/Lows
       Most Proud: Getting live information from API on to the page
       Least Proud: Overall lack of contribution to JS files both timewise and knowledgewise
