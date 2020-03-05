@@ -155,6 +155,8 @@ ul {
 .home-statement {
     position: absolute;
     top: 15%;
+    margin-right: 3px;
+    margin-left: 3px;
 }
 
 .home-statement h1,
@@ -266,21 +268,18 @@ textarea {
 }
 
 .review1 {
-    border: 1px solid black;
     height: 250px;
     margin: 0;
     margin-bottom: 1em;
 }
 
 .review2 {
-    border: 1px solid black;
     height: 250px;
     margin: 0;
     margin-bottom: 1em;
 }
 
 .review3 {
-    border: 1px solid black;
     height: 250px;
     margin: 0;
     margin-bottom: 1em;
@@ -402,6 +401,21 @@ footer a:hover {
     
 @media only screen and (min-width: 600px) {
     
+    .page-container {
+        display: grid;
+        grid-template-areas: 
+         "nav-bar"
+         "home" 
+         "home-cards" 
+         "totals" 
+         "all-restaurants" 
+         "current-restaurant" 
+         "reviews" 
+         "site-info";
+        grid-template-rows: .05fr .27fr .15fr .10fr .20fr .15fr .25fr .05fr;
+        grid-template-columns: 1fr;
+    }
+
     .logo-container {
         width: 150px;
         height: 150px;;
@@ -423,9 +437,32 @@ footer a:hover {
         display: flex;
         justify-content: space-around;
         margin-top: 2em;
+        font-size: 15px;
     }
     .sign-in br {
         display: none;
+    }
+
+    .home-statement {
+        margin-top: 2em;
+        margin-left: 2em;
+        margin-right: 2em;
+    }
+
+    .home-statement h1 {
+        font-size: 3em;
+    }
+
+    .home-statement p {
+        font-size: 1.5em;
+    }
+
+    #top-restaurants {
+        font-size: 1.5em;
+    }
+
+    #latest-reviews-content {
+        font-size: 1.5em;
     }
 
     .top-restaurants {
@@ -433,8 +470,20 @@ footer a:hover {
         margin-bottom: 1em;
     }
 
+    .top-restaurants h2 {
+        font-size: 2em;
+    }
+
     .latest-reviews {
         border: white solid 5px;
+    }
+
+    .latest-reviews h2 {
+        font-size: 2em;
+    }
+
+    .totals span {
+        font-size: 2em;
     }
 
     .promo1 iframe {
@@ -443,14 +492,40 @@ footer a:hover {
         background-image: url(https://via.placeholder.com/500x200);
     }
 
+    #restaurant-list button {
+        padding: 10px;
+        font-size: 18px;
+        margin: 5px;
+    }
+
+    #restaurant-details h1 {
+        font-size: 3em;
+    }
+
+    #restaurant-details a {
+        margin-bottom: 1em;
+    }
+
+    #restaurant-details span, p, a {
+        font-size: 1.5em
+    }
+
+    .enter-review label {
+        font-size: 1.5em;
+    }
+
+    .enter-review input {
+        font-size: 1em;
+    }
+
     .review1 {
-        border: white solid 5px;
+    
     }
     .review2 {
-        border: white solid 5px;
+    
     }
     .review3 {
-        border: white solid 5px;
+    
     }
 
     .promo2 iframe {
@@ -469,7 +544,11 @@ footer a:hover {
     .site-info {
         grid-area: site-info;
         display: grid;
-        grid-template-areas: "logo title . about" "feature . . about" "feature . . ." "copyright names names names";
+        grid-template-areas: 
+        "logo title title ." 
+        "feature feature about about" 
+        "feature feature about about" 
+        "copyright . . names";
         grid-template-rows: 1fr 1fr 1fr 1fr;
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
@@ -481,19 +560,18 @@ footer a:hover {
     .logo-footer img {
         width: 15em;
     }
-    .logo-footer h1 {
-        font-size: 3em;
+    .footer-title {
         grid-area: title;
-        color: white;
-        margin-left: 1em;
+    }
+    .footer-title h1{
+        font-size: 3em;
+        margin-bottom: 2em;
+        color: #F7F7F7;
     }
     .about-project {
         display: flex;
-        margin-left: 12em;
-    }
-    .title-footer {
-        justify-self: flex-start;
-        align-self: start;
+        flex-direction: column;
+        justify-content: space-between;
         grid-area: about;
     }
     .site-features {
@@ -507,7 +585,6 @@ footer a:hover {
     }
     .dev-names {
         grid-area: names;
-        margin-right: 10em;
     }
     .dev-names a {
         font-size: 2em;
