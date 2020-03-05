@@ -181,6 +181,17 @@ Project wrap-up
       3. Re-structured elements for increased usability
       4. Re-styled search input
       5. Made iframes responsive to media breaks
+### 2020-03-04
+      1. De-bugged HTML
+      2. De-bugged CSS
+      3. Researched POST to API
+      4. Replaced all placeholder text
+### 2020-03-05
+      1. De-bugged HTML
+      2. De-bugged CSS
+      3. Added MQ for responsiveness
+      4. Formatted review areas
+      5. Adjusted form input sizes
 ## Highs/Lows
       Most Proud: Getting live information from API on to the page
       Least Proud: Overall lack of contribution to JS files both timewise and knowledgewise
