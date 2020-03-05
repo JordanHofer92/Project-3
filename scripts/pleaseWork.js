@@ -41,7 +41,7 @@ getRestaurantsReviews().then(reviews => {
  * Show total number of restaurants in Strapi
  */
 function showTotalRestaurants(info) {
-    writeOnWebPage("span", " "+info.length, "totalRestaurants")
+    writeOnWebPage("span", " " + info.length, "totalRestaurants")
 }
 // End
 
@@ -50,7 +50,7 @@ function showTotalRestaurants(info) {
  * Show total number of reviews in Strapi
  */
 function showTotalReviews(reviews) {
-    writeOnWebPage("span", " "+reviews.length, "totalReviews")
+    writeOnWebPage("span", " " + reviews.length, "totalReviews")
 }
 // End
 
@@ -58,19 +58,60 @@ function showTotalReviews(reviews) {
 /**
  * Post user comments
  */
-function submitReview() {
-    fetch("http://red-strapi-postgres-heroku.herokuapp.com/Reviews", {
-        method: "POST",
-        body: JSON.stringify({
-            name: document.getElementById("name").value,
-            review: document.getElementById("review").value,
-            rating: document.getElementById("rating").value,
-            idrestaurant: "G0D0WN"/* This is the hard part, how to get the idnumber
-                                    based on the restaurant customer is commenting under. */,
-        })
-    })   
-}
+// function submitReview() {
+
+//     let name = document.getElementById("name").value;
+//     let review = document.getElementById("review").value;
+//     let rating= document.getElementById("rating").value;
+//     let idrestaurant= "W8T6U6";
+
+//     // var activeButton = document.getElementsByClassName("restaurant-button-active");
+//     // var restaurantID = activeButton.id;
+//     fetch("http://red-strapi-postgres-heroku.herokuapp.com/Reviews", {
+//         method: "POST",
+//         body:JSON.stringify({
+//             name:name,
+//             review:review,
+//             rating:rating,
+//             idrestaurant:idrestaurant
+//         })
+//     }).then(
+//         (response) => response.json())  
+// }
 //End
+    // fetch("http://red-strapi-postgres-heroku.herokuapp.com/Reviews", {
+    //     method: "POST",
+    //     // mode: "cors",
+    //     // cache: "no-cache",
+    //     // credentials: "include",
+    //     headers: {
+    //         "Content-Type": "application/json",
+    //     },
+    //     // redirect: "follow",
+    //     // referrerPolicy: "no-referrer",
+    //     body: {
+    //         "name": "Ivan",
+    //         "rating": 5,
+    //         "idrestaurant": "G0D0WN",
+    //         "review": "Please Show Up"
+    //     }
+    // })
+// fetch("http://red-strapi-postgres-heroku.herokuapp.com/Reviews", {
+//     "method": "POST",
+//     "headers": {"content-type": "multipart/form-data"},
+//     "body": {
+//         "name": "Ivan",
+//         "rating": 5,
+//         "idrestaurant": "G0D0WN",
+//         "review": "Please Show Up!"
+//     }
+// })
+// .then(response => {
+//   console.log(response);
+// })
+// .catch(err => {
+//   console.log(err);
+// });
 
 
 /**
@@ -209,8 +250,6 @@ function changeStyleForActiveButton() {
     for (var i = 0; i < buttons.length; i++) {
         buttons[i].addEventListener("click", function() {
             var currentButton = document.getElementsByClassName("restaurant-button-active");
-            console.log(currentButton)
-            console.log(currentButton[0])
             currentButton[0].className = currentButton[0].className.replace("restaurant-button-active", "");
             // Add the active class to the current/clicked button
             this.classList.add("restaurant-button-active");

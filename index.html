@@ -44,12 +44,12 @@
                 <h2>Our Latest Reviews</h2>
                 <div id="latest-reviews-content" class="latest-reviews-content"></div>
             </div>
-        </section>
+        </div>
         <div class="totals">
             <span class="total-restaurants" id="totalRestaurants">Restaurants<br></span>
             <span class="total-reviews" id="totalReviews">Reviews<br></span>
         </div>
-        <section class="all-restaurants">
+        <div class="all-restaurants">
             <div class="promo1">
                 <iframe></iframe>
             </div>
@@ -71,11 +71,11 @@
                 <input type="number" id="rating" name="rating" min="1" max="5"><br>
                 <label for="Review">Review:</label><br>
                 <textarea id="review" rows="10" cols="50"></textarea><br>
-                <input type="submit" value="Submit your review">
+                <input type="submit" value="Submit your review" id="submitReview" onclick="submitReview()">
             </form>
-            <div class="review1"></div>
-            <div class="review2"></div>
-            <div class="review3"></div>
+            <div class="review1" id="review1"></div>
+            <div class="review2" id="review2"></div>
+            <div class="review3" id="review3"></div>
             <div class="promo2">
                 <iframe></iframe>
             </div>
@@ -94,8 +94,8 @@
                 </div>
             </div>
         </div>
-        <footer class="site-info">
-            <div class="logo-footer">
+    <footer class="site-info">
+        <div class="logo-footer">
             <img src="/images/restaurant-reviews-neg-logo.svg" alt="Restaurant Reviews Logo" height="100" width="100">
             </div>
             <div class="footer-title">

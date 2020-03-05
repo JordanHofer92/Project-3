@@ -83,9 +83,18 @@ Project wrap-up
       1. wrote the function to properly display score when a restaurant is clicked;
       2. wrote the function to show 3 restaurants with highest score.
 ### 2020-03-02
-      1. Fixed bug for displaying reviews;
-      2. Added a function to show 3 reviews of this restaurant when the name button is clicked;
-      3. Minor refactor in the function showRestaurantInfoAnd3Reviews;
+      1. fixed bug for displaying reviews;
+      2. added a function to show 3 reviews of this restaurant when the name button is clicked;
+      3. minor refactor in the function showRestaurantInfoAnd3Reviews.
+### 2020-03-03
+      1. added "active" state for restaurant buttons, ie. the clicked button will change style untill another button is clicked.
+      2. researched how to post user comments with javascript fetch-post.
+### 2020-03-04
+      1. continued researching and testing, can make new entry in server, but the entry is empty.
+### To-do List
+      1. post user comment
+      2. weather api
+      3. show restaurant with patio
 ### Most/Least Proud Moments
       Most: Putting pieces of code together can make some of the functions work!
       Least: Having errors in my console and could not figure out why...
@@ -172,11 +181,6 @@ Project wrap-up
       3. Re-structured elements for increased usability
       4. Re-styled search input
       5. Made iframes responsive to media breaks
-### 2020-03-04
-      1. De-bugged css to remove new layout breakages
-      2. De-bugged HTML to remove new layout breakages
-      3. Researched posting to API from JS
-      4. Began presentation for deadline
 ## Highs/Lows
       Most Proud: Getting live information from API on to the page
       Least Proud: Overall lack of contribution to JS files both timewise and knowledgewise
