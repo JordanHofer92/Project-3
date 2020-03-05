@@ -1,3 +1,4 @@
+"use strict";
 /**
  * Fetch information of restaurants
  */
@@ -15,6 +16,7 @@ getRestaurantsInfo().then(info => {
     showRestaurantInfoAnd3Reviews(info);
     changeStyleForActiveButton();
     showTotalRestaurants(info);
+    setInitialState(info);
 })
 // End
 
@@ -202,7 +204,7 @@ function cleanUpReviews() {
  *     1. the restaurant info should show up in the restaurant detail section;
  *     2. the lastest 3 reviews should show up in the restaurant review section;
  */
-function showRestaurantInfoAnd3Reviews (restaurantInfo){
+function showRestaurantInfoAnd3Reviews(restaurantInfo) {
     for (let i = 0; i < restaurantInfo.length; i++) {
         const targetButton = document.getElementById("restaurantButton" + i);
         const name = restaurantInfo[i].name;
@@ -250,15 +252,6 @@ function showRestaurantInfoAnd3Reviews (restaurantInfo){
 // End
 
 
-/**
- * Set initial state:
- *      1. make one button to be active when page load;
- *      2. display info and reviews of that restaurant.
- */     
-document.getElementsByClassName()
-// End
-
-
 /**     
  * When user clicks a button, this button should change style until another button is clicked.
  */
@@ -270,10 +263,54 @@ function changeStyleForActiveButton() {
             var currentButton = document.getElementsByClassName("restaurant-button-active");
             currentButton[0].className = currentButton[0].className.replace("restaurant-button-active", "");
             // Add the active class to the current/clicked button
+            console.log(currentButton[0]);
             this.classList.add("restaurant-button-active");
         });
     }
 }
+// End
+
+
+/**
+ * Set initial state:
+ *      1. make one button to be active when page load;
+ *      2. display info and reviews of that restaurant.
+ */     
+function setInitialState(restaurantInfo) {
+    const initialButton = document.getElementById("restaurantButton0");
+    initialButton.classList.add("restaurant-button-active");
+    // show initial restaurant info in the restaurant detail section
+    calculateAverageScore(restaurantInfo[0].idnumber).then(score => {
+        document.getElementById('restaurant-details').innerHTML='';
+        writeOnWebPage("h1", restaurantInfo[0].name, "restaurant-details");
+        writeOnWebPage("span", "Cuisine: " + restaurantInfo[0].type, "restaurant-details");
+        writeOnWebPage("span", "Dining: " + restaurantInfo[0].dining, "restaurant-details");
+        writeOnWebPage("span", "Score: " + score, "restaurant-details");
+        writeOnWebPage("a", "Website: " + restaurantInfo[0].url, "restaurant-details", 'href', restaurantInfo[0].url);
+        writeOnWebPage("p", restaurantInfo[0].description, "restaurant-details");
+    });
+    // show 3 reviews of initial restaurant in review section
+    restaurantReviews.then(reviews =>{
+        const reviewsOfThisRestaurant = [];
+        for (let i = 0; i < reviews.length; i++){
+            if (reviews[i].idrestaurant === restaurantInfo[0].idnumber){
+                reviewsOfThisRestaurant.push(
+                    {
+                        "nameOfWritter": reviews[i].name,
+                        "review": reviews[i].review
+                    });
+            }
+        }
+        cleanUpReviews();
+        writeOnWebPage("span", reviewsOfThisRestaurant[0].nameOfWritter + ": ", "review1");
+        writeOnWebPage("article", reviewsOfThisRestaurant[0].review, "review1");
+        writeOnWebPage("span", reviewsOfThisRestaurant[1].nameOfWritter + ": ", "review2");
+        writeOnWebPage("article", reviewsOfThisRestaurant[1].review, "review2");
+        writeOnWebPage("span", reviewsOfThisRestaurant[2].nameOfWritter + ": ", "review3");
+        writeOnWebPage("article", reviewsOfThisRestaurant[2].review, "review3");
+    })
+};
+
 // End
 
 
