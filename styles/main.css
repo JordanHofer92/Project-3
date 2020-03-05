@@ -166,7 +166,7 @@ p {
 
 .home-cards {
     grid-area: home-cards;
-    line-height: 5em;
+    line-height: 2.5em;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -178,7 +178,10 @@ p {
     padding: 1em;
     line-height: 1em;
     margin: 0;
-    margin-bottom: 1em;
+}
+
+.latest-reviews {
+    margin-bottom: 2em;
 }
 
 .totals {
@@ -265,20 +268,27 @@ textarea {
 .reviews {
     grid-area: reviews;
     max-width: 100%;
+    margin: 10px;
 }
 
 .review1 article {
-    border: #F7F7F7 solid 3px;
+    border: #000000 solid 3px;
+    padding: 1em;
+    margin: 5px;
     margin-bottom: 1em;
 }
 
 .review2 article {
-    border: #F7F7F7 solid 3px;
+    border: #000000 solid 3px;
+    padding: 1em;
+    margin: 5px;
     margin-bottom: 1em;
 }
 
 .review3 article {
-    border: #F7F7F7 solid 3px;
+    border: #000000 solid 3px;
+    padding: 1em;
+    margin: 5px;
     margin-bottom: 1em;
 }
 
@@ -355,6 +365,8 @@ footer {
 
 .logo-footer{
     grid-area: title;
+    height: 75px;
+    width: 75px;
 }
 
 .footer-title h1 {
@@ -428,7 +440,8 @@ footer {
     }
 
     .top-restaurants {
-        border: white solid 5px;
+        border: #000000 solid 5px;
+        margin: 5px;
         margin-bottom: 1em;
     }
 
@@ -437,7 +450,8 @@ footer {
     }
 
     .latest-reviews {
-        border: white solid 5px;
+        border: #000000 solid 5px;
+        margin: 5px;
         margin-bottom: 2em;
     }
 
@@ -453,6 +467,8 @@ footer {
         width: 500px;
         height: 200px;
         background-image: url(https://via.placeholder.com/500x200);
+        margin-bottom: 2em;
+        margin-top: 2em;
     }
 
     #restaurant-list button {
@@ -482,13 +498,19 @@ footer {
     }
 
     .review1 article {
-        border: #F7F7F7 solid 3px;
+        border: #000000 solid 3px;
+        padding: 1em;
+        margin: 5px;
     }
     .review2 article {
-        border: #F7F7F7 solid 3px;
+        border: #000000 solid 3px;
+        padding: 1em;
+        margin: 5px;
     }
     .review3 article {
-        border: #F7F7F7 solid 3px;
+        border: #000000 solid 3px;
+        padding: 1em;
+        margin: 5px;
     }
 
     .promo2 iframe {
@@ -571,7 +593,7 @@ footer {
          "current-restaurant" 
          "reviews" 
          "site-info";
-        grid-template-rows: .05fr .45fr .30fr .10fr .25fr .25fr .25fr .05fr;
+        grid-template-rows: .15fr .75fr .5fr .15fr .25fr .5fr .5fr .25fr;
         grid-template-columns: 1fr;
     }
 
@@ -638,9 +660,11 @@ footer {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
-        margin-top: 3em;
+        position: relative;
+        margin-top: -25%;
         margin-bottom: 3em;
     }
+    
     .home-cards h2 {
         color: #F7F7F7;
         margin-bottom: 2em;
@@ -654,11 +678,8 @@ footer {
     .top-restaurants {
         border: 5px solid rgb(92, 22, 18);
         width: 20em;
-        height: 70em;
-        position: relative;
-        margin-top: -15%;
         font-size: 1em;
-        line-height: 3em;
+        line-height: 5em;
     }
 
     #top-restaurants {
@@ -674,11 +695,8 @@ footer {
     .latest-reviews {
         border: 5px solid rgb(92, 22, 18);
         width: 20em;
-        height: 70em;
-        position: relative;
-        margin-top: -15%;
         font-size: 1em;
-        line-height: 3em;
+        line-height: 5em;
     }
 
     .totals {
@@ -710,7 +728,7 @@ footer {
         "review1 review-images" 
         "review2 review-images" 
         "review3 advert";
-        grid-template-rows: 1fr .25fr .25fr .25fr;
+        grid-template-rows: .35fr .25fr .25fr .25fr;
         grid-template-columns: .4fr .65fr;
         grid-gap: 1em;
     }
@@ -718,29 +736,26 @@ footer {
     .enter-review {
         grid-area: revform;
         text-align: left;
-        margin-left: 15%;
+        margin-left: 10%;
     }
 
     textarea {
-        width: 500px;
+        width: 800px;
     }
 
     .review1  article {
         grid-area: review1;
         margin: 2em;
-        border: 3px solid #F7F7F7;
     }
     
     .review2 article {
         grid-area: review2;
         margin: 2em;
-        border: 3px solid #F7F7F7;
     }
 
     .review3 article {
         grid-area: review3;
         margin: 2em;
-        border: 3px solid #F7F7F7;
     }
 
     .review-images {
@@ -802,9 +817,9 @@ footer {
         grid-area: site-info;
         display: grid;
         grid-template-areas: 
-        "logo title title ." 
-        "feature feature about about" 
-        "feature feature about about" 
+        "logo logo title title" 
+        "feature . about about" 
+        "feature . about about" 
         "copyright . names names";
         grid-template-rows: 1fr 1fr 1fr 1fr;
         grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -858,9 +873,57 @@ footer {
         font-size: 1em;
     }
 }
-@media only screen and (min-width:1380px) {
+@media only screen and (min-width:1230px) {
     .home-cards {
         position: relative;
-        margin-top: -10%;
+        margin-top: -25%;
+    }
+    .top-restaurants {
+        width: 25em;
+    }
+    .latest-reviews {
+        width: 25em;
+    }
+    .restaurant-list {
+        display: flex;
+        justify-content: center;
+    }
+}
+@media only screen and (min-width:1320px) {
+    .home-cards {
+        position: relative;
+        margin-top: -30%;
+    }
+
+    .enter-review {
+        margin-left: 10%;
+    }
+
+    textarea {
+        width: 1000px;
+    }
+    
+}
+
+@media only screen and (min-width:1500px) {
+    .home-cards {
+        position: relative;
+        margin-top: -35%;
+    }
+}
+
+@media only screen and (min-width:1660px) {
+    .home-cards {
+        position: relative;
+        margin-top: -37%;
+    }
+    
+    .top-restaurants {
+        width: 30em;
+        line-height: 50px;
+    }
+    .latest-reviews {
+        width: 30em;
+        line-height: 50px;
     }
 }
