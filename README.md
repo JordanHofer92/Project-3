@@ -192,6 +192,7 @@ Project wrap-up
       3. Added MQ for responsiveness
       4. Formatted review areas
       5. Adjusted form input sizes
+      6. Re-formatted page layouts
 ## Highs/Lows
       Most Proud: Getting live information from API on to the page
       Least Proud: Overall lack of contribution to JS files both timewise and knowledgewise
