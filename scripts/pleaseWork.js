@@ -81,13 +81,37 @@ function showTotalReviews(reviews) {
 //End
     // fetch("http://red-strapi-postgres-heroku.herokuapp.com/Reviews", {
     //     method: "POST",
-    //     body: JSON.stringify({
-    //         name: 'Mr. Wang',
-    //         review: 'Hello! I am Ivan.',
-    //         rating: 5,
-    //         idrestaurant: 'G0D0WN'
-    //     })
-    // })  
+    //     // mode: "cors",
+    //     // cache: "no-cache",
+    //     // credentials: "include",
+    //     headers: {
+    //         "Content-Type": "application/json",
+    //     },
+    //     // redirect: "follow",
+    //     // referrerPolicy: "no-referrer",
+    //     body: {
+    //         "name": "Ivan",
+    //         "rating": 5,
+    //         "idrestaurant": "G0D0WN",
+    //         "review": "Please Show Up"
+    //     }
+    // })
+// fetch("http://red-strapi-postgres-heroku.herokuapp.com/Reviews", {
+//     "method": "POST",
+//     "headers": {"content-type": "multipart/form-data"},
+//     "body": {
+//         "name": "Ivan",
+//         "rating": 5,
+//         "idrestaurant": "G0D0WN",
+//         "review": "Please Show Up!"
+//     }
+// })
+// .then(response => {
+//   console.log(response);
+// })
+// .catch(err => {
+//   console.log(err);
+// });
 
 
 /**
@@ -226,8 +250,6 @@ function changeStyleForActiveButton() {
     for (var i = 0; i < buttons.length; i++) {
         buttons[i].addEventListener("click", function() {
             var currentButton = document.getElementsByClassName("restaurant-button-active");
-            console.log(currentButton)
-            console.log(currentButton[0])
             currentButton[0].className = currentButton[0].className.replace("restaurant-button-active", "");
             // Add the active class to the current/clicked button
             this.classList.add("restaurant-button-active");

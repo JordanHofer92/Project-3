@@ -532,7 +532,7 @@ footer a:hover {
          "current-restaurant" 
          "reviews" 
          "site-info";
-        grid-template-rows: .05fr .27fr .15fr .10fr .25fr .15fr .25fr .05fr;
+        grid-template-rows: .05fr .30fr .5fr .10fr .25fr .25fr .25fr .05fr;
         grid-template-columns: 1fr;
     }
 
@@ -584,7 +584,7 @@ footer a:hover {
         object-fit: cover;
     }
     .home h1 {
-        font-size: 4em;
+        font-size: 5em;
     }
     .home p {
         font-size: 2em;
@@ -805,27 +805,9 @@ footer a:hover {
         font-size: 1em;
     }
 }
-@media only screen and (min-width:1400px) {
-    .page-container {
-        display: grid;
-        grid-template-areas: 
-         "nav-bar"
-         "home" 
-         "home-cards" 
-         "totals" 
-         "all-restaurants" 
-         "current-restaurant" 
-         "reviews" 
-         "site-info";
-        grid-template-rows: .05fr .20fr .15fr .10fr .25fr .15fr .25fr .05fr;
-        grid-template-columns: 1fr;
-    }
-    
-    .top-restaurants {
-        width: 25em;
-    }
-
-    .latest-reviews {
-        width: 25em;
+@media only screen and (min-width:1380px) {
+    .home-cards {
+        position: relative;
+        margin-top: -10%;
     }
 }

@@ -181,11 +181,6 @@ Project wrap-up
       3. Re-structured elements for increased usability
       4. Re-styled search input
       5. Made iframes responsive to media breaks
-### 2020-03-04
-      1. De-bugged css to remove new layout breakages
-      2. De-bugged HTML to remove new layout breakages
-      3. Researched posting to API from JS
-      4. Began presentation for deadline
 ## Highs/Lows
       Most Proud: Getting live information from API on to the page
       Least Proud: Overall lack of contribution to JS files both timewise and knowledgewise
