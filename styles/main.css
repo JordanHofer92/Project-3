@@ -5,6 +5,10 @@
 Color Codes: 
 Red rgb(92, 22, 18) , Cream #F2E2BF , Brown #BA9374 , White #F7F7F7 , Black #000000 */
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
     color: rgb(92, 22, 18);
@@ -874,6 +878,15 @@ footer {
     }
 }
 @media only screen and (min-width:1230px) {
+    
+    .client-tools input {
+        width: 500px;
+        height: 35px;
+    }
+    .client-tools button {
+        height: 38px;
+        width: 100px;
+    }
     .home-cards {
         position: relative;
         margin-top: -25%;
