@@ -91,10 +91,13 @@ Project wrap-up
       2. researched how to post user comments with javascript fetch-post.
 ### 2020-03-04
       1. continued researching and testing, can make new entry in server, but the entry is empty.
+### 2020-03-05
+      1. set an "initial state" to show one restaurant info & reviews without clicking any buttons;
+      2. gave the generated contents different tags for better CSS styling.
 ### To-do List
-      1. post user comment
-      2. weather api
-      3. show restaurant with patio
+      1. post user comment.
+      2. weather api, show restaurants with patios according to weather.
+      3. change restaurant names in the reviews into links. When a link is clicked, page should jump to the restaurant info section and display related info.
 ### Most/Least Proud Moments
       Most: Putting pieces of code together can make some of the functions work!
       Least: Having errors in my console and could not figure out why...
