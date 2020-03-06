@@ -141,13 +141,39 @@ Project wrap-up
      1. Fine tuned layout
      2. Added tablet media query
 
+     ### 2020-03-04
+     1. Footer was broken, so fixed it
+     2. Finished tablet query
+     3. Attempted to problem-solve issues with posting form to api
+
+### 2020-03-05
+    1. Fixing errors
+    2. Still trying to fix form errors
+
+
+
 
 ### Most Proudest
      Getting Picture replace working with JavaScript
 
 ### Least Proudest
       Not getting Promises and code. It is really disheartening.  
+ 
+ ## Post-Project Retrospective
 
+ ### 1. Share how that experience was for you working on that project
+        As with any type of work, I found that you gain more understanding and confidence as you do more work on the project.  I like that I am gaining more confidence.
+
+ ### 2. What is the 1 thing you are proud for the group, and 1 thing you are proud of for yourself?
+        Group - very proud of the way everyone came together to solve issues and designed the site.  Speaking from experience, groups sometimes can clash.  Our group got along.
+
+        Myself - Proud that I am getting the harder concepts down.  Though I have a ways to go, I know I can do it.
+
+ ### 3. What is 1 key learning you will take away from this project?
+        If a solution doesn't seem to be possible, tske  break.  Come back to the table and you will end up finding a solution.
+
+ ### 4. What is one thing you want to challenge yourself on in the next project?
+        I would like to do some of the more difficult taks so I can understand them better.
       
 
 
