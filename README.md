@@ -98,7 +98,7 @@ Project wrap-up
       1. post user comment
       2. weather api
       3. show restaurant with patio
-	4. make **ALL** restaurant names clickable, show info of that restaurant when clicked.
+      4. make **ALL** restaurant names clickable, show info of that restaurant when clicked.
 ### Post-Project Retrospective
 #### Overall Experience
 	Exciting, challenging, and frastrating (sometimes).
