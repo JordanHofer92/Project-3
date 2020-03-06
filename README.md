@@ -197,6 +197,21 @@ Project wrap-up
       5. Adjusted form input sizes
       6. Re-formatted page layouts
       7. Applied styles to generated content
+
+## Reflections
+
+### How was the experience working on that project for me?
+* I found the experience to be enlightening. This was my first real group project and to see how everyone coordinates the workload was very interesting.
+
+### 1 thing I'm proud of for the group and 1 thing I'm proud of for myself?
+* For the group I am very proud of the way our group worked together and helped each other. We were communicative about our problems and receptive to suggestions on how to proceed.  For myself I am proud of my overall contributions to this project. I took the reins on most of the styling so I learnt a lot and was able to implement most of what I discovered.
+
+### 1 key learning I will take from this project?
+* Planning and managing workflow is incredibly important. Setting timelines and milestones within those timelines to direct our energy towards rather than "figuring it out as we go".
+
+### 1 thing I want to challenge myself on the next project?
+* I would like to be more involved in the functionality side of the next project. Writing more JavaScript and getting familiar with that tool seems like an integral skill to me.
+
 ## Highs/Lows
       Most Proud: Getting live information from API on to the page
       Least Proud: Overall lack of contribution to JS files both timewise and knowledgewise
