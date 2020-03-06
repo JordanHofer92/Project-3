@@ -94,13 +94,21 @@ Project wrap-up
 ### 2020-03-05
       1. set an "initial state" to show one restaurant info & reviews without clicking any buttons;
       2. gave the generated contents different tags for better CSS styling.
-### To-do List
-      1. post user comment.
-      2. weather api, show restaurants with patios according to weather.
-      3. change restaurant names in the reviews into links. When a link is clicked, page should jump to the restaurant info section and display related info.
-### Most/Least Proud Moments
-      Most: Putting pieces of code together can make some of the functions work!
-      Least: Having errors in my console and could not figure out why...
+### Things that can make this website better
+      1. post user comment
+      2. weather api
+      3. show restaurant with patio
+	4. make **ALL** restaurant names clickable, show info of that restaurant when clicked.
+### Post-Project Retrospective
+#### Overall Experience
+	Exciting, challenging, and frastrating (sometimes).
+#### Most/Least Proud about Yourself
+	Most: Putting pieces of code together can make some of the functions work!
+	Least: Having errors in my console and could not figure out why...
+#### One Key Learning
+	**RESEARCH MORE** before coding
+#### One Thing To Challenge in Next Project
+	New things that I never used before.
 
 ## Kevin:
 ### 2020-02-24 
