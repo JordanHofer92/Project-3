@@ -192,7 +192,14 @@ p {
     font-weight: bolder;
 }
 
+.top-restaurants {
+    border: #000000 solid 5px;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
 .latest-reviews {
+    border: #000000 solid 5px;
     margin-bottom: 2em;
 }
 
