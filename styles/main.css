@@ -22,7 +22,7 @@ h2 {
     font-family: 'Roboto Slab';
 }
 
-p {
+p, article {
     color: #000000;
     font-family: 'Montserrat';
     font-size: 17px;
@@ -50,6 +50,7 @@ button {
     color: #F7F7F7;
     border: none;
     opacity: 0.5;
+    cursor: pointer;
 }
 
 button:focus {
@@ -79,7 +80,7 @@ ul {
       "current-restaurant" 
       "reviews" 
       "site-info";
-    grid-template-rows: .05fr .15fr .15fr .05fr .25fr .15fr .15fr .15fr;
+    grid-template-rows: .05fr .10fr .15fr .05fr .25fr .15fr .15fr .15fr;
     grid-template-columns: 1fr;
 }
 
@@ -175,6 +176,7 @@ p {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    font-size: 18px;
 }
 
 .home-cards span,
@@ -182,6 +184,12 @@ p {
     padding: 1em;
     line-height: 1em;
     margin: 0;
+    font-size: 20px;
+    font-family: 'Roboto Slab';
+}
+
+.home-cards article {
+    font-weight: bolder;
 }
 
 .latest-reviews {
@@ -275,7 +283,13 @@ textarea {
     margin: 10px;
 }
 
+.reviews span {
+    font-family: 'Roboto Slab';
+    font-size: 20px;
+}
+
 .review1 article {
+    font-weight: bolder;
     border: #000000 solid 3px;
     padding: 1em;
     margin: 5px;
@@ -283,6 +297,7 @@ textarea {
 }
 
 .review2 article {
+    font-weight: bolder;
     border: #000000 solid 3px;
     padding: 1em;
     margin: 5px;
@@ -290,6 +305,7 @@ textarea {
 }
 
 .review3 article {
+    font-weight: bolder;
     border: #000000 solid 3px;
     padding: 1em;
     margin: 5px;
@@ -456,7 +472,7 @@ footer {
     .latest-reviews {
         border: #000000 solid 5px;
         margin: 5px;
-        margin-bottom: 2em;
+        margin-bottom: 1em;
     }
 
     .latest-reviews h2 {
@@ -597,7 +613,7 @@ footer {
          "current-restaurant" 
          "reviews" 
          "site-info";
-        grid-template-rows: .15fr .75fr .5fr .15fr .25fr .5fr .5fr .25fr;
+        grid-template-rows: .15fr .75fr .25fr .15fr .25fr .5fr .5fr .25fr;
         grid-template-columns: 1fr;
     }
 
@@ -675,13 +691,14 @@ footer {
     }
     .home-cards p {
         font-family: 'Montserrat';
-        font-weight: 800;
+        font-weight: 700;
         color: #000000;
     }
 
     .top-restaurants {
         border: 5px solid rgb(92, 22, 18);
         width: 20em;
+        height: 30em;
         font-size: 1em;
         line-height: 5em;
     }
@@ -699,6 +716,7 @@ footer {
     .latest-reviews {
         border: 5px solid rgb(92, 22, 18);
         width: 20em;
+        height: 30em;
         font-size: 1em;
         line-height: 5em;
     }
